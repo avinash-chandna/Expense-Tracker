@@ -1,8 +1,8 @@
 import csv
-from file_manager import file_name
+from file_manager import expense_file
 def total_expenses():
     total = 0.0
-    with open(file_name, "r") as file:
+    with open(expense_file, "r") as file:
         reader = csv.reader(file)
         next(reader)
         for row in reader:
@@ -11,7 +11,7 @@ def total_expenses():
 
 def search_by_category(target_category):
     found = False
-    with open(file_name, "r") as file:
+    with open(expense_file, "r") as file:
         reader = csv.reader(file)
         next(reader)
         

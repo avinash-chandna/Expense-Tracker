@@ -1,22 +1,22 @@
 import csv
 import os
-FILE_NAME = "expense.csv"
+File = "expense.csv"
 def create_file():
-    if not os.path.exists(FILE_NAME):
-        with open(FILE_NAME, "w", newline="") as file:
+    if not os.path.exists(File):
+        with open(File, "w", newline="") as file:
             writer = csv.writer(file)
             writer.writerow(["Name", "Amount", "Category"])
 def add_expense():
     name = input("Enter expense name: ")
     amount = float(input("Enter amount: "))
     category = input("Enter category: ")
-    with open(FILE_NAME, "a", newline="") as file:
+    with open(File, "a", newline="") as file:
         writer = csv.writer(file)
         writer.writerow([name, amount, category])
 
     print("Expense added successfully!")
 def view_expenses():
-    with open(FILE_NAME, "r") as file:
+    with open(File, "r") as file:
         reader = csv.reader(file)
         next(reader)
 
@@ -26,7 +26,7 @@ def view_expenses():
             print(f"Name: {row[0]} | Amount: ₹{row[1]} | Category: {row[2]}")
 def calculate_total():
     total = 0
-    with open(FILE_NAME, "r") as file:
+    with open(File, "r") as file:
         reader = csv.reader(file)
         next(reader)
         for row in reader:
@@ -37,7 +37,7 @@ def search_category():
 
     found = False
 
-    with open(FILE_NAME, "r") as file:
+    with open(File, "r") as file:
         reader = csv.reader(file)
 
         next(reader)
