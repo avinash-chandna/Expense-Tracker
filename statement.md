@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Project – Expense Tracker
-=======
-# Project Statement – Expense Tracker
->>>>>>> 055a3feca51eb99b37fac2396ccb7652439d6d71
 
 ## 1. Problem Statement
 
